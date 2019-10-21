@@ -1,6 +1,5 @@
 
 #include <iostream>
-#include <stdio.h>
 
 using namespace std;
 
@@ -98,7 +97,7 @@ class Tree
  void IInorder( ) {IInorder(root);}
 
  int Height(Node *root);
- int Count(Node *root)
+ int Count(Node *root);
 };
 
 void Tree::CreateTree()
@@ -204,7 +203,7 @@ int Tree::Height( Node *root)
 int Tree::Count(Node *root)
 {
  if(root)
- return count(root->lchild)+count(root->rchild)+1;
+ return Count(root->lchild)+Count(root->rchild)+1;
  return 0;
 }
 //Stack Iterative
